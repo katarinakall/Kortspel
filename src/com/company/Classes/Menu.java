@@ -17,10 +17,10 @@ public class Menu {
     public void useMenu() {
         printMenu();
         int input = sc.nextInt();
-        //Treat bad user no banana
         switch (input) {
             case 1:
                 gameLogic.play();
+                gameLogic.saveScore();
                 break;
 
             case 2:
@@ -30,15 +30,15 @@ public class Menu {
                         "\nOm du gissar rätt/fel har du vunnit/förloratoch partiet är över.");
                 break;
             case 3:
-                System.out.println("Antalet vunna bananer: " + gameLogic.getNumberOfBananas() + "\nAntalet spelade spel: " + gameLogic.getNumberOfGamesPlayed());
-                break;
+               gameLogic.loadScore();
+               break;
             case 4:
                 Main.setKeepPlaying(false);
                 System.out.println("Hej då!" );
                 System.exit(0);
             default:
                 System.out.println("Välj ett nummer mellan 1-4");
-                printMenu();
+
         }
 
     }

@@ -35,9 +35,4 @@ public class DeckOfCards {
         else
             return null;
     }
-
-    public List<Card> addCardToTheDeck() {
-        deck.add(getCardFromDeck(deck));
-        return deck;
-    }
 }

@@ -1,5 +1,6 @@
 package com.company.Classes;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class GameLogic {
@@ -60,10 +61,29 @@ public class GameLogic {
         if (responce.equalsIgnoreCase("j")) {
             play();
         }
-
-
     }
 
+    public void saveScore(){
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(new BufferedWriter(new FileWriter("Statistik.txt", true)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        out.println(numberOfBananas + " " + numberOfGamesPlayed);
+        out.close();
+    }
+
+    public void loadScore() {
+
+        try {
+            Scanner fileReader = new Scanner(new File("Statistik.txt"));
+            while (fileReader.hasNextInt())
+                System.out.println("Antalet vunna bananer är: " + fileReader.nextInt() + " Antaler spelade spel är: " + fileReader.nextInt());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

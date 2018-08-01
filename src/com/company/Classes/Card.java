@@ -17,34 +17,26 @@ public class Card {
     private char suit;
     private String value;
 
-    public char getSuit() {
-        return suit;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
     public Card(char suit, String value) {
         this.suit = suit;
         this.value = value;
-
     }
+
     @Override
     public String toString() {
-        return suit + " - " + value +"\n";
+        return suit + " - " + value + "\n";
     }
 
-    public boolean isHigher(Card card){
+    public boolean isHigher(Card card) {
         int thisCardValue = Arrays.asList(values).indexOf(value);
         int cardValue = Arrays.asList(values).indexOf(card.value);
-        if(thisCardValue < cardValue)
+        if (thisCardValue < cardValue)
             return false;
-        if(thisCardValue > cardValue)
+        if (thisCardValue > cardValue)
             return true;
         int thisSuit = Arrays.asList(suits).indexOf(suit);
         int cardSuit = Arrays.asList(suits).indexOf(card.suit);
-        return (thisSuit>cardSuit);
+        return (thisSuit > cardSuit);
 
     }
 }
