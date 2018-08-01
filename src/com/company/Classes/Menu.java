@@ -16,23 +16,23 @@ public class Menu {
 
     public void useMenu() {
         printMenu();
-        int input = sc.nextInt();
+        String input = sc.next();
         switch (input) {
-            case 1:
+            case "1":
                 gameLogic.play();
                 gameLogic.saveScore();
                 break;
 
-            case 2:
+            case "2":
                 System.out.println("Två dolda kort tas ut från kortleken: " +
                         "\ndet ena kortet ges till dig och det andra kortet läggs ut öppet så att du kan se det. " +
                         "\nNu ska du gissa om ditt dolda kort är högre eller lägre än det öppna kortet. " +
                         "\nOm du gissar rätt/fel har du vunnit/förloratoch partiet är över.");
                 break;
-            case 3:
+            case "3":
                gameLogic.loadScore();
                break;
-            case 4:
+            case "4":
                 Main.setKeepPlaying(false);
                 System.out.println("Hej då!" );
                 System.exit(0);
