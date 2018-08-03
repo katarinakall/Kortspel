@@ -9,19 +9,13 @@ public class GameLogic {
     private int numberOfBananas;
     private int numberOfGamesPlayed;
 
-    public int getNumberOfBananas() {
-        return numberOfBananas;
-    }
-
-    public int getNumberOfGamesPlayed() {
-        return numberOfGamesPlayed;
-    }
-
     public GameLogic() {
+
         cardDeck = new DeckOfCards();
     }
 
     public void gameSetUp() {
+
         cardDeck.shuffle();
     }
 
@@ -56,6 +50,9 @@ public class GameLogic {
             }
 
         }
+        cardDeck.addCardToDeck(DeckOfCards.getDeck(), firstCard);
+        cardDeck.addCardToDeck(DeckOfCards.getDeck(), nextCard);
+
         System.out.println("Vill du spela igen? (J/N) ");
         String responce = sc.next();
         if (responce.equalsIgnoreCase("j")) {

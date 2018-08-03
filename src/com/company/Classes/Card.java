@@ -1,8 +1,7 @@
 package com.company.Classes;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.zip.DeflaterInputStream;
+
 
 public class Card {
 
@@ -16,10 +15,12 @@ public class Card {
 
     private char suit;
     private String value;
+    private boolean cardFaceUp;
 
     public Card(char suit, String value) {
         this.suit = suit;
         this.value = value;
+        cardFaceUp = true;
     }
 
     @Override

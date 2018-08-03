@@ -26,6 +26,7 @@ public class DeckOfCards {
     }
 
     public void shuffle() {
+
         Collections.shuffle(deck);
     }
 
@@ -34,5 +35,8 @@ public class DeckOfCards {
             return deck.remove(0);
         else
             return null;
+    }
+    public void addCardToDeck (List<Card> deck, Card card){
+        deck.add(card);
     }
 }
